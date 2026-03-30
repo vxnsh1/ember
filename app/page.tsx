@@ -1,9 +1,11 @@
-import { ThemeToggle } from "@/components/theme-toggle"
+import Hero from "@/components/hero"
+import { Navbar } from "@/components/navbar"
 
 const Home = () => {
   return (
     <div>
-      <ThemeToggle />
+      <Navbar />
+      <Hero />
     </div>
   )
 }
