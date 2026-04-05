@@ -9,30 +9,14 @@ const Hero = () => {
   const isDark = resolvedTheme === "dark";
 
   return (
-    <main className="w-full flex flex-col text-center items-center justify-center mt-10 gap-4">
-      <div className="relative size-12">
-        <Image
-          src="/ember_white_logo.png"
-          alt="Ember Logo"
-          fill
-          className="object-contain dark:opacity-0 transition-opacity duration-300"
-          priority
-        />
-        <Image
-          src="/ember_dark_logo.png"
-          alt="Ember Logo"
-          fill
-          className="object-contain opacity-0 dark:opacity-100 transition-opacity duration-300"
-          priority
-        />
-      </div>
-      <div className="">
-        <h1 className="font-sans text-2xl font-semibold">
-          Think your Github is solid?{" "}
-        </h1>
-        <p className="text-card-foreground/60">
-          Get honest feedback on structure, projects, and what actually stands
-          out.
+    <main className="w-full flex flex-col text-center items-center justify-center gap-4 px-5 md:px-10">
+      <h1 className="font-heading text-7xl">Ember</h1>
+      <div className="leading-4">
+        <p className="text-xl font-semibold">
+          Think your Github is solid?
+        </p>
+        <p className="text-card-foreground/50">
+          We judge your commits so others don’t have to.
         </p>
       </div>
     </main>

@@ -3,9 +3,8 @@ import { ThemeToggle } from "./theme-toggle";
 
 export const Navbar = () => {
   return (
-    <header className="w-full h-16 py-2 px-4">
-      <nav className="w-full h-full flex items-center justify-between">
-        <p className="font-heading text-2xl lg:text-3xl">Ember</p>
+    <header className="w-full h-16 py-2 px-4 fixed">
+      <nav className="w-full h-full flex items-center justify-end">
         <div className="flex gap-2">
           <Link href={"https://github.com/vxnsh1/ember"} target="_blank">
             <Github size={20} />

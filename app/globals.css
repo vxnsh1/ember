@@ -118,10 +118,10 @@
 
 @layer base {
   html {
-    font-family: var(--font-nunito, ui-sans-serif, system-ui, sans-serif);
+    font-family: var(--font-sans);
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 
   .font-heading,
@@ -135,6 +135,13 @@
     font-weight: 400;
   }
   * {
-    @apply border-border outline-ring/50 transition-colors duration-300;
+    @apply border-border outline-ring/50 transition-colors duration-300 font-sans;
+  }
+
+  .focusOutline {
+  outline: 2px solid transparent;
+  box-shadow: 0 0 8px 2px var(--accent-foreground, #8888ff), 0 0 0 4px var(--accent-foreground, #8888ff) inset;
+  outline-offset: 2px;
+  transition: box-shadow 0.3s cubic-bezier(0.4,0,0.2,1), outline-color 0.3s cubic-bezier(0.4,0,0.2,1);
   }
 }
