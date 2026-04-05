@@ -14,7 +14,7 @@ const Home = () => {
       <Navbar />
       <Hero />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-5 lg:px-40 mt-10">
+      <div className="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-5 lg:px-20 mt-10">
         {roastModes.map((mode) => (
           <Card
             key={mode.id}
@@ -27,6 +27,8 @@ const Home = () => {
           />
         ))}
       </div>
+
+      
     </div>
   );
 };

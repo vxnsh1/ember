@@ -9,7 +9,13 @@ type CardProps = {
   onClick?: () => void;
 };
 
-export const Card = ({ title, subtitle, images, description, onClick }: CardProps) => {
+export const Card = ({
+  title,
+  subtitle,
+  images,
+  description,
+  onClick,
+}: CardProps) => {
   return (
     <div
       onClick={onClick}

@@ -27,8 +27,10 @@ const Hero = () => {
         />
       </div>
       <div className="">
-        <h1 className="font-sans text-2xl font-semibold">Think your Github is solid? </h1>
-        <p className="text-card-foreground/70">
+        <h1 className="font-sans text-2xl font-semibold">
+          Think your Github is solid?{" "}
+        </h1>
+        <p className="text-card-foreground/60">
           Get honest feedback on structure, projects, and what actually stands
           out.
         </p>
