@@ -27,12 +27,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Vansh Chouhan" }],
   creator: "Vansh Chouhan",
-  metadataBase: new URL("https://your-domain.com"),
   openGraph: {
     title: "Ember - GitHub Roaster",
     description:
       "Let Ember take a detailed look at your GitHub and help you see what catches attention and what might be holding you back. It'll bring everything into the open so you can improve and grow.",
-    url: "https://your-domain.com",
     images: ["/og-ember.png"],
   },
   twitter: {

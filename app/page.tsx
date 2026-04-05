@@ -100,16 +100,26 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full h-screen">
+    <div className="w-full min-h-screen flex flex-col">
       <Navbar />
-      <div className="w-full h-full flex flex-col items-center justify-center gap-10">
+      <div className="flex-1 flex flex-col items-center justify-center mt-20 gap-10 px-2 sm:px-4 md:px-10 lg:px-20 w-full">
         <Hero />
         {step === 1 && (
           <GithubUsername onSubmitUsername={handleUsernameSubmit} />
         )}
         <FadeInOut show={step === 2}>
           <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-5 lg:px-20 mt-10 w-full h-80 transition-all duration-500"
+            className="
+              grid 
+              grid-cols-1 
+              sm:grid-cols-2 
+              lg:grid-cols-3 
+              gap-4 
+              mt-6 
+              h-80
+              w-full 
+              transition-all 
+              duration-500"
             ref={gridRef}
             style={gridMinHeight !== undefined ? { minHeight: gridMinHeight } : undefined}
           >

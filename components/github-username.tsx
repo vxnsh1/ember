@@ -1,11 +1,10 @@
 import { Loader } from "lucide-react";
 import { useState } from "react";
+import { isValidGithubUsername } from "@/lib/github-username";
 
 interface GithubUsernameProps {
   onSubmitUsername: (username: string) => void;
 }
-
-const GITHUB_USERNAME_REGEX = /^(?!-)(?!.*--)[A-Za-z\d-]{1,39}(?<!-)$/;
 
 export const GithubUsername = ({ onSubmitUsername }: GithubUsernameProps) => {
   const [username, setUsername] = useState("");
@@ -13,7 +12,7 @@ export const GithubUsername = ({ onSubmitUsername }: GithubUsernameProps) => {
   const [error, setError] = useState<string | null>(null);
 
   const validateUsername = (value: string) => {
-    if (!GITHUB_USERNAME_REGEX.test(value.trim())) {
+    if (!isValidGithubUsername(value)) {
       return "Invalid GitHub username.";
     }
     return null;
