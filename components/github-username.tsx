@@ -1,9 +1,13 @@
 import { Loader } from "lucide-react";
 import { useState } from "react";
 
+interface GithubUsernameProps {
+  onSubmitUsername: (username: string) => void;
+}
+
 const GITHUB_USERNAME_REGEX = /^(?!-)(?!.*--)[A-Za-z\d-]{1,39}(?<!-)$/;
 
-export const GithubUsername = () => {
+export const GithubUsername = ({ onSubmitUsername }: GithubUsernameProps) => {
   const [username, setUsername] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -17,7 +21,6 @@ export const GithubUsername = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
     const trimmed = username.trim();
     const validationError = validateUsername(trimmed);
 
@@ -25,8 +28,11 @@ export const GithubUsername = () => {
       setError(validationError);
       return;
     }
+
     setError(null);
     setLoading(true);
+
+    onSubmitUsername(trimmed);
 
     setTimeout(() => {
       setLoading(false);
@@ -36,22 +42,13 @@ export const GithubUsername = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
-    if (error) {
-      setError(null);
-    }
+    if (error) setError(null);
   };
 
   const handleBlur = () => {
-    if (username.trim() === "") {
-      setError(null);
-      return;
-    }
+    if (username.trim() === "") return;
     const validationError = validateUsername(username.trim());
-    if (validationError) {
-      setError(validationError);
-    } else {
-      setError(null);
-    }
+    setError(validationError);
   };
 
   return (
